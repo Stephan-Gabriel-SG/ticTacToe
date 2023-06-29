@@ -1,0 +1,497 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: system-ui;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+body.blur {
+    filter: blur(18px);
+}
+
+.nav {
+    display: flex;
+    background: white;
+    padding: 1px;
+    margin: 0;
+    box-shadow: 0px 2px 6px 1px darkgray;
+    justify-content: space-between;
+}
+
+.nav h1 {
+    margin-left: 40px;
+}
+
+.containeur .score td {
+    font-size: x-large;
+    text-align: center;
+    padding: 2px 40px;
+}
+
+.containeur .score {
+    position: absolute;
+    left: 10%;
+    border-collapse: collapse;
+}
+
+.containeur .score th {
+    font-size: xx-large;
+    font-weight: 600;
+    border-bottom: 2px solid #ffa500c9;
+}
+
+/* Board Card */
+.player label {
+    display: block;
+    background: white;
+    padding: 0px 50px;
+    border-bottom: 5px solid transparent;
+}
+
+label.activate {
+    border-bottom: 5px solid #FFC107;
+    transform: translateY(-5px);
+}
+
+#indication {
+    display: flex;
+    flex-direction: column;
+}
+
+#indication div {
+    display: flex;
+    justify-content: space-between;
+}
+
+input#level:focus {
+    outline: none;
+    border: none;
+}
+
+.card table {
+    border-collapse: collapse;
+}
+
+.card table td {
+    text-align: center;
+    border-bottom: 10px solid #FFC107;
+    border-right: 10px solid #FF9800;
+    font-size: xxx-large;
+    cursor: pointer;
+}
+
+tr:last-child td {
+    border-bottom: 10px solid transparent;
+}
+
+.card table td:last-child {
+    border-right: 10px solid transparent;
+}
+
+.card table td div {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: .8s;
+}
+
+@keyframes scaleEffect {
+    0% {
+        transform: scale(3);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.containeur {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 55px;
+    flex-direction: column;
+}
+
+.player {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 30px;
+}
+
+.onePlayer img ,.twoPlayer img {
+    width: 70px;
+}
+
+.card {
+    background: white;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.btNav {
+    display: flex;
+    justify-content: space-around;
+    gap: 25%;
+    margin-right: 10%;
+    align-items: center;
+}
+
+button img {
+    width: 21px;
+}
+
+dialog#modal1,dialog#modal2 {
+    /* filter: blur(1px); */
+    border: none;
+    border-radius: 10px;
+    animation: zoom .4s alternate;
+    box-shadow: 0 0 5px 0px #606060;
+    /* transition: 2s; */
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.25)
+    }
+
+    25% {
+        transform: scale(0.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#modal1 form,#modal2 form {
+    border: none;
+    display: flex;
+    text-align: center;
+    padding: 15px 30px;
+    align-items: stretch;
+}
+
+label.onePlayer, label.twoPlayer {
+    /* background: #FF5722; */
+    border: 4px solid #ff572200;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    background: #03A9F4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.checkPlayer {
+    display: flex;
+    justify-content: space-around;
+}
+
+input#onePlayer:checked ~ label.onePlayer,input#twoPlayer:checked ~ label.twoPlayer {
+    /* background: #00BCD4; */
+    border: 4px solid #ffbf0a;
+}
+
+.twoPlayer , .onePlayer {
+    background: #03a9f43d;
+}
+
+.twoPlayer:hover,.onePlayer:hover {
+    /* background: #00BCD4; */
+    border: 4px dashed #ffbf0a;
+}
+#message::first-letter
+{
+    color:#FF9800;
+}
+.close {
+    font-size: x-large;
+    position: absolute;
+    left: 90%;
+    top: 1px;
+    cursor: pointer;
+    color: black;
+}
+
+.close:hover {
+    color: red;
+    margin-top: -2px;
+}
+
+button,input#submit {
+    padding: 5px 15px;
+    background: #ffffff;
+    /* color: white; */
+    font-size: large;
+    border: none;
+    /* border-radius: 5px; */
+    font-family: inherit;
+    letter-spacing: 1px;
+    margin-left: 3%;
+    transition: .3s;
+}
+
+button:hover,input#submit:hover {
+    /* background: #03a9f478; */
+    transform: translate(0, -3px);
+    cursor: pointer;
+    border-bottom: 2px solid orange;
+}
+
+input#submit {
+    margin-left: initial;
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 300px;
+    text-align: left;
+}
+
+form label,input[type='submit'] {
+    font-size: large;
+}
+
+input[type="text"], input[type='number'] {
+    padding: 10px;
+    height: 20px;
+    font-size: large;
+    font-family: cursive;
+    border: none;
+    background: #e0f2f187;
+}
+
+input[type='text' ]:focus-visible,input[type='number']:focus-visible {
+    outline: none;
+    border-bottom: 1px solid #009688;
+}
+
+/* Footer */
+footer {
+    box-shadow: 0px 0px 4px -1px #004D40;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    display: flex;
+    padding-top: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+footer {
+    box-shadow: 0px 0px 4px -1px #004D40;
+    position: absolute;
+    bottom: 0px;
+    height: 40px;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+footer label {
+    display: flex;
+    align-items: center;
+}
+
+span#date {
+    padding: 0px 5px;
+}
+
+footer a img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+#modal2 #message,#win {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#win::before,#win::after {
+    content: '"'
+}
+
+#modal2 .score {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin: -15px 0px;
+    border-bottom: 2px solid orange;
+    justify-content: space-around;
+}
+
+#modal2 .score td,#modal2 .score th {
+    text-align: center;
+}
+#fermetureModal1
+{
+    border:none;
+    font-weight:bolder;
+    position:absolute;
+    left:83%;
+    top:2%;
+    border-radius:100%;
+}
+#fermetureModal1:hover
+{
+    color:red;
+}
+@media screen and (min-width: 1300px) {
+    .card table div {
+        width: 100PX;
+        height: 100PX;
+    }
+
+    .card {
+        padding: 30px 0;
+    }
+
+    .player label {
+        font-size: 30px;
+    }
+
+    .containeur .score {
+        top: 13%;
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    .card table div {
+        width: 85PX;
+        height: 85PX;
+    }
+
+    .card {
+        padding: 65px 0;
+    }
+
+    .player label {
+        font-size: 25px;
+    }
+
+    .containeur .score td {
+        font-size: small
+    }
+
+    .containeur .score th {
+        font-size: large
+    }
+
+    .containeur .score {
+        left: 3%;
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card table div {
+        width: 85PX;
+        height: 85PX;
+    }
+
+    div .card {
+        padding: 50px 0;
+    }
+
+    .player label {
+        font-size: 25px;
+    }
+
+    .containeur .score td {
+        font-size: small
+    }
+
+    .containeur .score th {
+        font-size: large
+    }
+
+    .containeur {
+        gap: 0px;
+    }
+
+    .containeur .score {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    div.nav h1 {
+        font-size:x-large;
+    }
+    #activeFirstPlayer,#activeSecondPlayer
+    {
+        margin-top:20px;
+        padding:0px 25px;
+        font-size:large;
+    }
+    .containeur {
+        margin:-4px;
+    }
+
+    div .btNav {
+        gap: 0;
+        width: 20%;
+    }
+    #showmenu,#restart1 {
+        padding:0px;
+    }
+    div.card{
+        padding:30px 0px;
+    }
+    .card table div {
+        width: 70px;
+        height: 70px;
+    }
+    footer label {
+        font-size: small;
+    }
+    #modal1 form,#modal2 form
+    {
+        padding:2px 0px;
+        width:100%;
+    }
+    #modal1,#modal2
+    {
+        font-size:small;
+        width:120%;
+    }
+    .onePlayer,.twoPlayer
+    {
+        width:40px;
+        height:50px;
+    }
+        .onePlayer img,.twoPlayer img
+    {
+        width:40px;
+        height:50px;
+    }
+}

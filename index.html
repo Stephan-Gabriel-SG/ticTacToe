@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="image/favicon.png">
+        <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <div class='nav'>
+            <h1>Tic tac toe</h1>
+            <div class='btNav'>
+                <button class='menuStart' id='showMenu'>
+                    <img src='image/menu.svg'>
+                </button>
+                <button class='restart' id='restart1'>
+                    <img src='image/restart.svg'>
+                </button>
+            </div>
+        </div>
+        <div class='containeur'>  
+                <span class='player'>
+                    <label id='activeFirstPlayer' class='activate' >&#9932
+                    </label>
+                    <label id='activeSecondPlayer'>&#9675
+                    </label>
+                </span>
+                <table class="score">
+                    <tr>
+                        <th colspan=2>
+                            score
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            &#9932 :
+                        </td>
+                        <td id="firstPlayerScore">0</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &#9675 :
+                        <td id='secondPlayerScore'>0</td>
+                    </tr>
+                </table>
+                <div class='card'>
+                    <table>
+                        <tr>
+                            <td>
+                                <div id=0></div>
+                            </td>
+                            <td>
+                                <div id=1></div>
+                            </td>
+                            <td>
+                                <div id=2></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id=3></div>
+                            </td>
+                            <td>
+                                <div id=4></div>
+                            </td>
+                            <td>
+                                <div id=5></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id=6></div>
+                            </td>
+                            <td>
+                                <div id=7></div>
+                            </td>
+                            <td>
+                                <div id=8></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <label>
+                    &copy copyright <span id='date'></span>
+                    <script>
+                        let date = (new Date().getFullYear() == 2023) ? 2023 : (2023 + '-' + new Date().getFullYear());
+                        document.getElementById('date').textContent = ` ${date} `;
+                    </script>
+                    St&eacutephan Gabriel SG 
+                    <a href='https://github.com/Stephan-Gabriel-SG'>
+                        <img src='github.svg'>
+                    </a>
+                </label>
+            </footer>
+    </body>
+    <dialog id='modal1'>
+        <button id="fermetureModal1">X</button>
+        <form method='dialog'>
+            <label class='title'>
+                <h1>GAME</h1>
+            </label>
+            <label>Played with</label>
+            <div class="checkPlayer">
+                <input hidden type='radio' id='onePlayer' value='true' name='player' checked>
+                <label for='onePlayer' class="onePlayer">
+                    <img src="image/robot.png">
+                </label>
+                <input hidden type='radio' id='twoPlayer' value='false' name='player'>
+                <label for='twoPlayer' class="twoPlayer">
+                    <img src='image/friend.png'</label>
+            </div>
+                        <div id='indication'>
+                            <div>
+                                <label>Easy</label>
+                                <label>Normal</label>
+                                <label>Hard</label>
+                            </div>
+                            <input type='range' id='level' max='100' min='0' step='50' value='0'>
+                        </div>
+                        <input id='start' type='submit' value='start'>
+        </form>
+    </dialog>
+    <dialog id='modal2'>
+        <form method='dialog'>
+            <span id='win'>
+                
+            </span>
+            <span id='message'>
+                
+            </span>
+            <table class="score">
+                    <tr>
+                        <th colspan=2>
+                            score
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            &#9932 :
+                        </td>
+                        <td id="winFirstPlayerScore">0</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &#9675 :
+                        <td id='winSecondPlayerScore'>0</td>
+                    </tr>
+            </table>
+            <input id='restart2' type='submit' value='Continue'>
+        </form>
+    </dialog>
+    <script type='text/javascript' src='script.js'></script>
+</html>

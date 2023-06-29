@@ -364,6 +364,13 @@ footer a img {
 {
     color:red;
 }
+/* Désactiver la surbrillance lors d'un clic */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
 @media screen and (min-width: 1300px) {
     .card table div {
         width: 100PX;

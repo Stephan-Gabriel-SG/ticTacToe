@@ -76,9 +76,9 @@ input#level:focus {
     outline: none;
     border: none;
 }
-
 .card table {
     border-collapse: collapse;
+    outline: none;
 }
 
 .card table td {
@@ -87,6 +87,7 @@ input#level:focus {
     border-right: 10px solid #FF9800;
     font-size: xxx-large;
     cursor: pointer;
+    outline: none;
 }
 
 tr:last-child td {
